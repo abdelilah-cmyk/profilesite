@@ -3,490 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Développeur Full Stack à Casablanca | Abdelilah El Guennouni</title>
-
-<meta name="description" content="Développeur Full Stack basé à Casablanca, Maroc. Création de sites web, applications et APIs performantes. Contactez-moi pour vos projets digitaux.">
-
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://elguennouni.me/">
-
-
+    <title>Abdelilah El Guennouni | Développeur Full Stack Casablanca</title>
+    <meta name="description" content="Expert en création de sites web et applications mobiles à Casablanca. Solutions sur mesure : React, Spring Boot, SEO. Boostez votre entreprise au Maroc.">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* --- Hero Section --- */
         header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 80px 0 100px;
-            position: relative;
+            padding: 160px 0 100px;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent);
+        }
+
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text { flex: 2; }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-placeholder {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(45deg, var(--bg-card), var(--primary));
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero {
-            position: relative;
-            z-index: 1;
+            border: 4px solid var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-
-        .tagline {
-            font-size: 1.5em;
-            color: #9ca3af;
-            margin-bottom: 30px;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #d1d5db;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(5px);
-        }
-
-        .contact-item svg {
-            width: 20px;
-            height: 20px;
-            fill: #3b82f6;
-        }
-
-        .contact-item a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: #3b82f6;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-            color: #f3f4f6;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            border-radius: 2px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .skill-card {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid #374151;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            border-color: #3b82f6;
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-        }
-
-        .skill-card:hover::before {
-            opacity: 1;
-        }
-
-        .skill-icon {
-            font-size: 3em;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            line-height: 1.1;
             margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .highlight {
+            color: var(--accent);
             display: block;
         }
 
-        .skill-card h3 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            color: #f3f4f6;
-            position: relative;
-            z-index: 1;
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 40px;
         }
 
-        .skill-card p {
-            color: #9ca3af;
-            line-height: 1.8;
-            position: relative;
-            z-index: 1;
-        }
-
-        .services {
-            background: #111827;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .service-item {
-            background: #1f2937;
-            padding: 35px;
-            border-radius: 12px;
-            border-left: 4px solid #3b82f6;
-            transition: all 0.3s ease;
-        }
-
-        .service-item:hover {
-            background: #252f3f;
-            transform: translateX(5px);
-        }
-
-        .service-item h4 {
-            font-size: 1.3em;
-            margin-bottom: 12px;
-            color: #3b82f6;
-        }
-
-        .service-item p {
-            color: #9ca3af;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-            animation: pulse 15s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-section h2 {
-            color: white;
-            margin-bottom: 25px;
-        }
-
-        .cta-section h2::after {
-            background: white;
-        }
-
-        .cta-section p {
-            font-size: 1.2em;
-            margin-bottom: 35px;
-            color: #dbeafe;
-        }
-
-        .cta-buttons {
+        /* --- Buttons --- */
+        .btn-group {
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 15px 40px;
-            border-radius: 8px;
-            font-size: 1.1em;
+            padding: 14px 28px;
+            border-radius: 12px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-primary {
-            background: white;
-            color: #1e40af;
-            border: 2px solid white;
-        }
-
-        .btn-primary:hover {
-            background: transparent;
+            background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
         }
 
-        .btn-secondary {
-            background: transparent;
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+        .btn-outline {
+            border: 2px solid var(--bg-card);
             color: white;
-            border: 2px solid white;
         }
 
-        .btn-secondary:hover {
-            background: white;
-            color: #1e40af;
-            transform: translateY(-3px);
+        /* --- Floating WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: 0.3s;
         }
 
-        footer {
-            background: #0a0a0a;
-            padding: 40px 0;
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* --- Sections --- */
+        section { padding: 100px 0; }
+        
+        h2 {
+            font-size: 2.2rem;
             text-align: center;
-            border-top: 1px solid #1f2937;
+            margin-bottom: 60px;
         }
 
-        footer p {
-            color: #6b7280;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
+        .card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 { margin-bottom: 15px; color: var(--accent); }
+
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            .tagline {
-                font-size: 1.2em;
-            }
-
-            h2 {
-                font-size: 2em;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .skills-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
+            .hero-flex { flex-direction: column-reverse; text-align: center; }
+            .btn-group { justify-content: center; }
+            .profile-placeholder { width: 200px; height: 200px; }
         }
     </style>
-
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Abdelilah El Guennouni",
-  "jobTitle": "Développeur Full Stack",
-  "url": "https://elguennouni.me",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Casablanca",
-    "addressCountry": "MA"
-  },
-  "telephone": "+212680376294",
-  "email": "abdlilah.el.guennouni@gmail.com"
-}
-</script>
-
-    <meta property="og:title" content="Développeur Full Stack à Casablanca | Abdelilah El Guennouni">
-<meta property="og:description" content="Développement web et applications modernes à Casablanca, Maroc.">
-<meta property="og:url" content="https://elguennouni.me">
-<meta property="og:type" content="website">
-
 </head>
 <body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">EL GUENNOUNI</a>
+            <div class="contact-links">
+                <a href="tel:+212680376294" style="color: white; text-decoration: none; font-weight: 600;">+212 680 376 294</a>
+            </div>
+        </div>
+    </nav>
+
     <header>
         <div class="container">
-            <div class="hero">
-                <h1>Développeur Full Stack à Casablanca, Maroc</h1>
-                <p class="tagline">
-Je suis <strong>Abdelilah El Guennouni</strong>, développeur Full Stack spécialisé en solutions web modernes.
-</p>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        <a href="mailto:abdlilah.el.guennouni@gmail.com">abdlilah.el.guennouni@gmail.com</a>
+            <div class="hero-flex">
+                <div class="hero-text">
+                    <h1>Expert Digital à <span class="highlight">Casablanca.</span></h1>
+                    <p class="tagline">
+                        Je transforme vos idées en solutions performantes. Développeur Full Stack spécialisé en <strong>React, Spring Boot et SEO WordPress</strong> pour entreprises marocaines.
+                    </p>
+                    <div class="btn-group">
+                        <a href="https://wa.me/212680376294" class="btn btn-primary">Lancer mon projet</a>
+                        <a href="#services" class="btn btn-outline">Mes services</a>
                     </div>
-                    <div class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        <a href="tel:+212680376294">+212 680 376 294</a>
-                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-placeholder">
+                        </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="competences">
+    <section id="services">
         <div class="container">
-            <h2>Mes Compétences</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <span class="skill-icon">☕</span>
-                    <h3>Java Spring Boot</h3>
-                    <p>Développement d'applications backend robustes et scalables avec Spring Boot. Création d'APIs RESTful, gestion de bases de données, et mise en œuvre des meilleures pratiques de sécurité.</p>
+            <h2>Services de Développement Web</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon-box">🚀</div>
+                    <h3>Création de Sites Web</h3>
+                    <p>Sites vitrines et e-commerce optimisés pour le marché marocain. Performance, rapidité et design moderne.</p>
                 </div>
-                <div class="skill-card">
-                    <span class="skill-icon">🔍</span>
-                    <h3>WordPress SEO</h3>
-                    <p>Optimisation complète de sites WordPress pour les moteurs de recherche. Amélioration de la vitesse, structure des contenus, et stratégies pour augmenter votre visibilité en ligne.</p>
+                <div class="card">
+                    <div class="icon-box">🛠️</div>
+                    <h3>Applications Sur Mesure</h3>
+                    <p>Développement d'outils de gestion, APIs sécurisées (Spring Boot) et interfaces réactives (React).</p>
                 </div>
-                <div class="skill-card">
-                    <span class="skill-icon">⚛️</span>
-                    <h3>React Front-End</h3>
-                    <p>Création d'interfaces utilisateur modernes et interactives avec React. Développement de composants réutilisables, gestion d'état, et expériences utilisateur fluides.</p>
+                <div class="card">
+                    <div class="icon-box">📈</div>
+                    <h3>SEO & Visibilité</h3>
+                    <p>Optimisation de votre présence sur Google pour attirer des clients locaux à Casablanca et partout au Maroc.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <a href="https://wa.me/212680376294" class="whatsapp-float" target="_blank">
+        <svg width="35" height="35" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.43 0 9.856-4.426 9.858-9.855.002-5.43-4.425-9.856-9.853-9.856-5.417 0-9.856 4.439-9.858 9.856-.001 1.938.529 3.803 1.534 5.393l-.997 3.646 3.784-.992zm11.233-7.505c-.328-.164-1.945-.959-2.245-1.07-.3-.109-.518-.164-.737.164-.218.327-.845 1.07-1.036 1.29-.19.218-.382.245-.71.082-.328-.164-1.386-.511-2.641-1.631-.975-.87-1.633-1.945-1.824-2.272-.191-.328-.021-.506.143-.668.148-.147.328-.382.492-.574.164-.191.218-.328.328-.546.11-.218.055-.41-.028-.573-.082-.164-.737-1.774-1.011-2.428-.27-.643-.543-.556-.738-.567-.19-.011-.41-.013-.629-.013-.218 0-.573.082-.873.41-.3.327-1.147 1.12-1.147 2.731 0 1.611 1.174 3.167 1.338 3.385.164.218 2.311 3.528 5.596 4.949.781.338 1.39.54 1.864.69.785.249 1.499.214 2.062.13.629-.093 1.945-.792 2.218-1.556.273-.764.273-1.419.191-1.556-.082-.136-.3-.218-.628-.382z"/></svg>
+    </a>
+
+    <footer style="padding: 40px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-dim);">
         <div class="container">
-            <h2>Services Proposés</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h4>Développement Web Full Stack</h4>
-                    <p>
-Développement web sur mesure pour entreprises et entrepreneurs à <strong>Casablanca et partout au Maroc</strong>.
-</p>
-
-                </div>
-                <div class="service-item">
-                    <h4>APIs RESTful</h4>
-                    <p>Conception et développement d'APIs performantes et sécurisées</p>
-                </div>
-                <div class="service-item">
-                    <h4>Optimisation SEO</h4>
-                    <p>Amélioration du référencement naturel de votre site WordPress</p>
-                </div>
-                <div class="service-item">
-                    <h4>Interfaces Modernes</h4>
-                    <p>Création d'interfaces utilisateur élégantes et réactives avec React</p>
-                </div>
-                <div class="service-item">
-                    <h4>Conseil Technique</h4>
-                    <p>Accompagnement sur vos projets et choix technologiques</p>
-                </div>
-                <div class="service-item">
-                    <h4>Maintenance & Support</h4>
-                    <p>Suivi et amélioration continue de vos applications</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Travaillons Ensemble</h2>
-            <p>Vous avez un projet en tête ? Discutons de la façon dont je peux vous aider à le réaliser.</p>
-            <div class="cta-buttons">
-                <a href="mailto:abdlilah.el.guennouni@gmail.com" class="btn btn-primary">Contactez-moi par Email</a>
-                <a href="tel:+212680376294" class="btn btn-secondary">Appelez-moi</a>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="contact">
-  <h2>Contact Développeur Full Stack à Casablanca</h2>
-  <p>
-    Vous cherchez un développeur web fiable au Maroc ? Contactez-moi directement.
-  </p>
-</section>
-
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 EL-GUENNOUNI ABDELILAH. Tous droits réservés.</p>
+            <p>&copy; 2026 EL-GUENNOUNI ABDELILAH | Casablanca, Maroc</p>
         </div>
     </footer>
+
 </body>
 </html>
